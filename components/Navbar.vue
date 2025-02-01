@@ -1,6 +1,11 @@
 <template>
   <nav
-    class="shadow-lg rounded-lg fixed top-4 left-4 right-4 z-50 px-6 py-4 bg-opacity-10 bg-white dark:bg-white border border-white/10"
+    ref="navbar"
+    class="navbar shadow-lg rounded-lg fixed top-4 left-4 right-4 z-50 px-6 py-4 bg-opacity-10 bg-white dark:bg-white border border-white/10 transition-opacity duration-500"
+    :class="{
+      'opacity-0 pointer-events-none': isHidden,
+      'opacity-100': !isHidden,
+    }"
   >
     <div class="container mx-auto flex justify-between items-center">
       <div class="flex items-center">
@@ -36,7 +41,32 @@
   </nav>
 </template>
 
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+
+const isHidden = ref(false)
+let lastScrollY = 0
+
+const handleScroll = () => {
+  const currentScrollY = window.scrollY
+  isHidden.value = currentScrollY > lastScrollY && currentScrollY > 50
+  lastScrollY = currentScrollY
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+</script>
+
 <style scoped>
+.navbar {
+  z-index: 999;
+  transition: opacity 0.5s ease-in-out;
+}
 a {
   transition: color 0.3s ease;
 }

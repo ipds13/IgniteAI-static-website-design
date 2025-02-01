@@ -4,8 +4,8 @@
   <MeetTheAIAgents />
   <TheProblemWeSolve />
   <MarketOpportunity />
-  <HowIgniteAIWorks />
   <Roadmap />
+  <HowIgniteAIWorks />
   <FinalCallToAction />
 </template>
 

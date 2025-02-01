@@ -1,9 +1,12 @@
 <template>
-  <section class="hero-section relative text-white py-20">
+  <section
+    class="hero-section relative text-white py-20 opacity-0 transform translate-y-10"
+    ref="heroSection"
+  >
     <div class="container mx-auto flex justify-between items-center">
       <div class="flex flex-col items-center justify-between">
         <div class="md:w-1/2 z-30 text-center md:text-left">
-          <h1 class="text-4xl md:text-7xl font-bold mb-6">
+          <h1 class="text-7xl font-extrabold mb-6">
             The Future of Intelligent AI Agents
           </h1>
           <p class="text-xl md:text-2xl font-semibold mb-8">
@@ -12,14 +15,10 @@
             opportunities effortlessly.
           </p>
           <div class="space-x-4">
-            <button
-              class="bg-black border border-white text-white px-6 py-2 rounded-full font-semibold hover:bg-gray-100 hover:text-black transition-colors"
-            >
+            <button class="cosmic-button cosmic-button-black">
               Get Started Now
             </button>
-            <button
-              class="bg-white border border-white text-black px-6 py-2 rounded-full font-semibold hover:bg-black hover:text-gray-100 transition-colors"
-            >
+            <button class="cosmic-button cosmic-button-white">
               Meet the AI Agents
             </button>
           </div>
@@ -40,14 +39,37 @@
   </section>
 </template>
 
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const heroSection = ref(null)
+
+onMounted(() => {
+  setTimeout(() => {
+    if (heroSection.value) {
+      heroSection.value.classList.add('fade-in-slide-up')
+    }
+  }, 100) // Delay kecil agar animasi lebih smooth
+})
+</script>
+
 <style scoped>
 .hero-section {
-  min-height: 1000px;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   background-image: url('@/assets/images/Slide-1-BG.png');
   background-size: cover;
   background-position: center;
+  transition:
+    opacity 1s ease-out,
+    transform 1s ease-out;
+}
+
+/* Animasi Fade-In dan Slide-Up */
+.fade-in-slide-up {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .hero-section h1 {
@@ -60,7 +82,19 @@
 
 @media (min-width: 768px) {
   .hero-section img {
-    max-height: 600px; /* Adjust max height for better desktop layout */
+    max-height: 600px;
   }
+}
+
+.cosmic-button {
+  @apply border-2 px-8 py-3 rounded-full text-lg font-bold transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)];
+}
+
+.cosmic-button-black {
+  @apply border-white text-white bg-black hover:bg-white hover:text-black;
+}
+
+.cosmic-button-white {
+  @apply border-black text-black bg-white hover:bg-black hover:text-white;
 }
 </style>

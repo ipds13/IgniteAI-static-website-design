@@ -1,4 +1,5 @@
 <template>
+  <LoadingScreen />
   <div
     class="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300"
   >
@@ -11,6 +12,7 @@
 
 <script setup>
 import Navbar from '@/components/Navbar.vue'
+import LoadingScreen from '@/components/LoadingScreen.vue'
 </script>
 
 <style>

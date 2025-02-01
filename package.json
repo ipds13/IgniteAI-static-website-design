@@ -11,9 +11,10 @@
     "lintfix": "prettier --write --list-different ."
   },
   "dependencies": {
-    "nuxt": "^3.10.0",
+    "@headlessui/vue": "^1.7.17",
     "@heroicons/vue": "^2.0.18",
-    "@headlessui/vue": "^1.7.17"
+    "chart.js": "^4.4.7",
+    "nuxt": "^3.10.0"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.8.0",
