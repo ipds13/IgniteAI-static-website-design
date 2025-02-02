@@ -139,6 +139,21 @@ onBeforeUnmount(() => {
   align-items: center;
 }
 
+/* Responsive typography */
+@media (max-width: 768px) {
+  .market-opportunity h2 {
+    @apply text-4xl;
+  }
+
+  .market-opportunity h3 {
+    @apply text-3xl;
+  }
+
+  .market-opportunity p {
+    @apply text-lg;
+  }
+}
+
 /* Smooth animations for chart container */
 canvas {
   transition: transform 0.3s ease;

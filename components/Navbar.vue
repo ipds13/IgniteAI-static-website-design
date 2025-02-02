@@ -9,34 +9,66 @@
   >
     <div class="container mx-auto flex justify-between items-center">
       <div class="flex items-center">
-        <!-- Logo -->
-        <img src="/assets/logo/igniteAI-06.png" alt="Logo" class="w-20 h-20" />
-        <!-- Judul -->
-        <h1 class="text-4xl font-bold text-white ml-4">IgniteAI</h1>
+        <img
+          src="/assets/logo/igniteAI-06.png"
+          alt="Logo"
+          class="w-16 h-16 md:w-24 md:h-24"
+        />
+        <h1 class="title title-lg text-white ml-4"><b>Ignite</b>AI</h1>
       </div>
-      <div class="flex items-center space-x-6">
+
+      <div class="hidden md:flex items-center space-x-6">
         <a
+          v-for="link in links"
+          :key="link"
           href="#"
-          class="text-white font-bold text-xl hover:text-gray-300 transition-colors"
-          >About</a
+          class="font-bold text-xl text-white hover:text-gray-300 transition-colors"
+          >{{ link }}</a
         >
-        <a
-          href="#"
-          class="text-white font-bold text-xl hover:text-gray-300 transition-colors"
-          >Features</a
+        <button
+          class="bg-black text-white px-6 py-2 text-4xl font-bold rounded"
         >
-        <a
-          href="#"
-          class="text-white font-bold text-xl hover:text-gray-300 transition-colors"
-          >Our Products</a
-        >
-        <a
-          href="#"
-          class="text-white font-bold text-xl hover:text-gray-300 transition-colors"
-          >Roadmap</a
-        >
-        <button class="text-white px-6 py-2 text-4xl font-bold">BUY NOW</button>
+          BUY NOW
+        </button>
       </div>
+
+      <button
+        class="md:hidden text-white focus:outline-none"
+        @click="toggleMenu"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div
+      v-if="isMenuOpen"
+      class="absolute top-20 left-4 right-4 bg-white text-black p-4 rounded-lg shadow-lg flex flex-col space-y-4 text-center"
+    >
+      <a
+        v-for="link in links"
+        :key="link"
+        href="#"
+        class="hover:text-gray-600"
+        @click="toggleMenu"
+        >{{ link }}</a
+      >
+      <button class="bg-black text-white px-6 py-2 rounded" @click="toggleMenu">
+        BUY NOW
+      </button>
     </div>
   </nav>
 </template>
@@ -45,12 +77,18 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const isHidden = ref(false)
+const isMenuOpen = ref(false)
+const links = ['About', 'Features', 'Our Products', 'Roadmap']
 let lastScrollY = 0
 
 const handleScroll = () => {
   const currentScrollY = window.scrollY
   isHidden.value = currentScrollY > lastScrollY && currentScrollY > 50
   lastScrollY = currentScrollY
+}
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value
 }
 
 onMounted(() => {
@@ -66,8 +104,5 @@ onUnmounted(() => {
 .navbar {
   z-index: 999;
   transition: opacity 0.5s ease-in-out;
-}
-a {
-  transition: color 0.3s ease;
 }
 </style>

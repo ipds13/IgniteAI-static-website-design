@@ -16,6 +16,20 @@ import LoadingScreen from '@/components/LoadingScreen.vue'
 </script>
 
 <style>
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 .transition-colors {
   transition:
     background-color 0.3s ease,

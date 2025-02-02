@@ -1,40 +1,44 @@
 <template>
   <section
-    class="hero-section relative text-white py-20 opacity-0 transform translate-y-10"
+    class="hero-section relative text-white py-16 md:py-20 opacity-0 transform translate-y-10"
     ref="heroSection"
   >
-    <div class="container mx-auto flex justify-between items-center">
-      <div class="flex flex-col items-center justify-between">
-        <div class="md:w-1/2 z-30 text-center md:text-left">
-          <h1 class="text-7xl font-extrabold mb-6">
-            The Future of Intelligent AI Agents
-          </h1>
-          <p class="text-xl md:text-2xl font-semibold mb-8">
-            IgniteAI delivers AI Agents that don’t just work—they adapt, learn,
-            and empower. Transform complexity into simplicity and unlock new
-            opportunities effortlessly.
-          </p>
-          <div class="space-x-4">
-            <button class="cosmic-button cosmic-button-black">
-              Get Started Now
-            </button>
-            <button class="cosmic-button cosmic-button-white">
-              Meet the AI Agents
-            </button>
-          </div>
-          <h2 class="text-white text-2xl font-bold mt-6">
-            Smarter AI. Better Decisions. Infinite possibilities.
-          </h2>
+    <div
+      class="container mx-auto flex flex-col-reverse md:flex-row items-center justify-between text-center md:text-left px-4 sm:px-6 lg:px-8"
+    >
+      <!-- Text Content -->
+      <div class="md:w-1/2 md:mt-0">
+        <h1 class="title title-xl mb-4 mt-20 md:mb-6">
+          The Future of Intelligent AI Agents
+        </h1>
+        <p class="subtitle subtitle-lg mb-6 md:mb-8">
+          IgniteAI delivers AI Agents that don’t just work—they adapt, learn,
+          and empower. Transform complexity into simplicity and unlock new
+          opportunities effortlessly.
+        </p>
+        <div
+          class="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0"
+        >
+          <button class="cosmic-button cosmic-button-black">
+            Get Started Now
+          </button>
+          <button class="cosmic-button cosmic-button-white">
+            Meet the AI Agents
+          </button>
         </div>
+        <h2 class="subtitle subtitle-lg mt-6">
+          Smarter AI. Better Decisions. Infinite possibilities.
+        </h2>
       </div>
-    </div>
-    <!-- Gambar Ilustrasi -->
-    <div class="justify-start flex mt-12">
-      <img
-        src="/assets/images/slide-1.png"
-        alt="AI Agents"
-        class="max-w-full md:max-w-2xl lg:max-w-4xl"
-      />
+
+      <!-- Gambar Ilustrasi (Hanya tampil di desktop) -->
+      <div class="hidden md:block md:w-1/2">
+        <img
+          src="/assets/images/slide-1.png"
+          alt="AI Agents"
+          class="w-[90%] lg:w-[1350%] max-w-5xl ml-auto"
+        />
+      </div>
     </div>
   </section>
 </template>
@@ -49,7 +53,7 @@ onMounted(() => {
     if (heroSection.value) {
       heroSection.value.classList.add('fade-in-slide-up')
     }
-  }, 100) // Delay kecil agar animasi lebih smooth
+  }, 100)
 })
 </script>
 
@@ -66,28 +70,13 @@ onMounted(() => {
     transform 1s ease-out;
 }
 
-/* Animasi Fade-In dan Slide-Up */
 .fade-in-slide-up {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
 
-.hero-section h1 {
-  line-height: 1.2;
-}
-
-.hero-section p {
-  line-height: 1.6;
-}
-
-@media (min-width: 768px) {
-  .hero-section img {
-    max-height: 600px;
-  }
-}
-
 .cosmic-button {
-  @apply border-2 px-8 py-3 rounded-full text-lg font-bold transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)];
+  @apply border-2 px-6 py-3 rounded-full text-lg font-bold transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)];
 }
 
 .cosmic-button-black {
@@ -96,5 +85,11 @@ onMounted(() => {
 
 .cosmic-button-white {
   @apply border-black text-black bg-white hover:bg-black hover:text-white;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    @apply text-center;
+  }
 }
 </style>

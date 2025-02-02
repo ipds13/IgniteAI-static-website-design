@@ -7,6 +7,7 @@
   <Roadmap />
   <HowIgniteAIWorks />
   <FinalCallToAction />
+  <Footer />
 </template>
 
 <script setup>
@@ -18,4 +19,5 @@ import MarketOpportunity from '@/components/MarketOpportunity.vue'
 import HowIgniteAIWorks from '@/components/HowIgniteAIWorks.vue'
 import Roadmap from '@/components/Roadmap.vue'
 import FinalCallToAction from '@/components/FinalCallToAction.vue'
+import Footer from '@/components/Footer.vue'
 </script>

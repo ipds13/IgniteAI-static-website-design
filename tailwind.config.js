@@ -10,7 +10,12 @@ module.exports = {
     './app.vue',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        heading: ['Just Sans Semibold', 'sans-serif'],
+        sans: ['Myriad Pro Regular', 'sans-serif']
+      },
+    },
   },
   plugins: [],
 }

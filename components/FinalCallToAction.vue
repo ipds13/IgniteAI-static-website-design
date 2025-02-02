@@ -35,6 +35,21 @@
   align-items: center;
 }
 
+/* Responsive typography */
+@media (max-width: 768px) {
+  .final-cta h2 {
+    @apply text-4xl;
+  }
+
+  .final-cta h3 {
+    @apply text-3xl;
+  }
+
+  .final-cta p {
+    @apply text-lg;
+  }
+}
+
 .cosmic-button {
   @apply border-2 px-8 py-3 rounded-full text-lg font-bold transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)];
 }

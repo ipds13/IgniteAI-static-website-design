@@ -1,0 +1,47 @@
+/* Deklarasi font-face */
+@font-face {
+  font-family: 'Just Sans Semibold';
+  src: url('~/assets/fonts/Just_sans_semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Myriad Pro Regular';
+  src: url('~/assets/fonts/myriadpro-regular.OTF') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Class global */
+.title {
+  font-family: 'Just Sans Semibold', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-family: 'Myriad Pro Regular', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+/* Variasi ukuran */
+.title-xl {
+  @apply title text-6xl md:text-8xl lg:text-9xl;
+}
+
+.title-lg {
+  @apply title text-4xl md:text-6xl lg:text-7xl;
+}
+
+.subtitle-lg {
+  @apply subtitle text-xl md:text-2xl lg:text-3xl;
+}
+
+.subtitle-md {
+  @apply subtitle text-lg md:text-xl;
+}
