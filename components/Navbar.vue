@@ -25,9 +25,7 @@
           class="font-bold text-xl text-white hover:text-gray-300 transition-colors"
           >{{ link }}</a
         >
-        <button
-          class="bg-black text-white px-6 py-2 text-4xl font-bold rounded"
-        >
+        <button class="text-white px-6 py-2 text-4xl font-bold rounded">
           BUY NOW
         </button>
       </div>
