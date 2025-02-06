@@ -15,7 +15,7 @@
           Start Your Journey with IgniteAI
         </button>
         <button class="cosmic-button cosmic-button-white">
-          Meet the Agents
+          Explore the technology behind IgniteAI
         </button>
       </div>
     </div>

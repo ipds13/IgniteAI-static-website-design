@@ -19,7 +19,11 @@
 
       <!-- Right: Social Media Logos -->
       <div class="flex justify-center md:justify-end space-x-4">
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://x.com/myigniteai?s=21"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img
             src="/assets/icons/twitter-logo.svg"
             alt="Twitter"
@@ -27,7 +31,7 @@
           />
         </a>
         <a
-          href="https://t.me/igniteAI"
+          href="https://t.me/igniteai"
           target="_blank"
           rel="noopener noreferrer"
         >

@@ -11,7 +11,7 @@ const show = ref(true)
 
 onMounted(() => {
   setTimeout(() => {
-    show.value = false // Hilangkan loading setelah 2 detik (bisa disesuaikan)
+    show.value = false // Hilangkan loading setelah 2 detik
   }, 2000)
 })
 </script>
@@ -28,6 +28,7 @@ onMounted(() => {
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  transition: opacity 1s ease; /* Tambahkan transisi untuk overlay */
 }
 
 .loading-spinner {

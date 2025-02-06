@@ -20,10 +20,10 @@
       <div class="hidden md:flex items-center space-x-6">
         <a
           v-for="link in links"
-          :key="link"
-          href="#"
+          :key="link.name"
+          :href="link.url"
           class="font-bold text-xl text-white hover:text-gray-300 transition-colors"
-          >{{ link }}</a
+          >{{ link.name }}</a
         >
         <button class="text-white px-6 py-2 text-4xl font-bold rounded">
           BUY NOW
@@ -58,11 +58,11 @@
     >
       <a
         v-for="link in links"
-        :key="link"
-        href="#"
+        :key="link.name"
+        :href="link.url"
         class="hover:text-gray-600"
         @click="toggleMenu"
-        >{{ link }}</a
+        >{{ link.name }}</a
       >
       <button class="bg-black text-white px-6 py-2 rounded" @click="toggleMenu">
         BUY NOW
@@ -76,7 +76,11 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const isHidden = ref(false)
 const isMenuOpen = ref(false)
-const links = ['About', 'Features', 'Our Products', 'Roadmap']
+const links = [
+  { name: 'Telegram', url: 'https://t.me/igniteai' },
+  { name: 'X (Twitter)', url: 'https://x.com/myigniteai?s=21' },
+  { name: 'GitHub', url: 'https://github.com/IgniteAI-eth' },
+]
 let lastScrollY = 0
 
 const handleScroll = () => {
