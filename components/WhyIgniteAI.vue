@@ -100,7 +100,7 @@ onMounted(() => {
       end: 'bottom top',
       scrub: true,
     },
-    opacity: 1,
+    opacity: 2,
     y: -50, // Adjust this value for parallax intensity
     ease: 'none',
   })
