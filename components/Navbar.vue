@@ -25,9 +25,12 @@
           class="font-bold text-xl text-white hover:text-gray-300 transition-colors"
           >{{ link.name }}</a
         >
-        <button class="text-white px-6 py-2 text-4xl font-bold rounded">
+        <a
+          href="#"
+          class="text-white px-6 py-2 text-4xl font-extrabold rounded"
+        >
           BUY NOW
-        </button>
+        </a>
       </div>
 
       <button
@@ -77,9 +80,10 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const isHidden = ref(false)
 const isMenuOpen = ref(false)
 const links = [
-  { name: 'Telegram', url: 'https://t.me/igniteai' },
-  { name: 'X (Twitter)', url: 'https://x.com/myigniteai?s=21' },
-  { name: 'GitHub', url: 'https://github.com/IgniteAI-eth' },
+  { name: 'Community', url: 'https://t.me/igniteai' },
+  { name: 'Whitepaper', url: 'https://github.com/IgniteAI-eth' },
+  { name: 'Linktree', url: '' },
+  // { name: 'Linktree', url: 'https://x.com/myigniteai?s=21' },
 ]
 let lastScrollY = 0
 

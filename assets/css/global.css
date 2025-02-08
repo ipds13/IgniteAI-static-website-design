@@ -1,0 +1,12 @@
+body {
+  scrollbar-width: none; /* Untuk Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Untuk Chrome, Safari, dan Edge */
+}
+
+.main-content {
+  overflow-y: auto; /* Memungkinkan scrolling di dalam main */
+  max-height: 100vh;
+}

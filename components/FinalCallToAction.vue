@@ -1,16 +1,28 @@
 <template>
-  <section class="final-cta text-white py-20">
+  <section
+    class="final-cta text-white py-20"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+  >
     <div class="container mx-auto text-center mt-64">
-      <h2 class="text-9xl font-extrabold mb-8">
+      <h2
+        class="text-9xl font-extrabold mb-8"
+        data-aos="zoom-in"
+        data-aos-duration="1200"
+      >
         Join the Future of AI Agents Today
       </h2>
-      <p class="text-2xl font-semibold my-8">
+      <p
+        class="text-2xl font-semibold my-8"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
         IgniteAI is more than a product—it’s a revolution in how humans and AI
         work together. With AI Agents designed to empower, adapt, and simplify,
         the possibilities are endless. Be part of this movement, and let’s build
         the future together.
       </p>
-      <div class="space-x-4">
+      <div class="space-x-4" data-aos="fade-up" data-aos-delay="400">
         <button class="cosmic-button cosmic-button-black">
           Start Your Journey with IgniteAI
         </button>
@@ -23,7 +35,13 @@
 </template>
 
 <script setup>
-// Script setup jika diperlukan
+import { onMounted } from 'vue'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
+onMounted(() => {
+  AOS.init()
+})
 </script>
 
 <style scoped>

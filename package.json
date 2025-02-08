@@ -13,6 +13,7 @@
   "dependencies": {
     "@headlessui/vue": "^1.7.17",
     "@heroicons/vue": "^2.0.18",
+    "aos": "^2.3.4",
     "chart.js": "^4.4.7",
     "gsap": "^3.12.7",
     "motion": "^12.4.0",

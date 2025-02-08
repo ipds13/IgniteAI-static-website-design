@@ -1,7 +1,8 @@
 <template>
   <section class="market-opportunity py-20">
     <div class="container mx-auto px-6">
-      <div class="text-center mb-16">
+      <!-- Judul dengan animasi fade-up -->
+      <div class="text-center mb-16" data-aos="fade-up">
         <h2 class="text-8xl md:text-8xl font-bold mb-8 text-white">
           The AI Revolution is Here<br />
           <span class="text-teal-400">And We're Leading It</span>
@@ -9,15 +10,15 @@
       </div>
 
       <div class="flex flex-col lg:flex-row items-center gap-12 mb-16">
-        <!-- Chart Container -->
-        <div class="w-full lg:w-2/3">
+        <!-- Chart Container dengan animasi fade-right -->
+        <div class="w-full lg:w-2/3" data-aos="fade-right">
           <div class="bg-white/10 p-8 rounded-2xl backdrop-blur-lg">
             <canvas ref="chartCanvas" class="w-full h-96"></canvas>
           </div>
         </div>
 
-        <!-- Text Content -->
-        <div class="w-full lg:w-1/3 text-left">
+        <!-- Text Content dengan animasi fade-left -->
+        <div class="w-full lg:w-1/3 text-left" data-aos="fade-left">
           <p class="text-xl text-white mb-8 leading-relaxed">
             The global AI market is projected to reach
             <span class="text-teal-400 font-bold">$1.8 trillion by 2030</span>.
@@ -25,7 +26,10 @@
             groundbreaking AI Agents that redefine productivity, creativity, and
             innovation.
           </p>
-          <button class="cosmic-button">Invest in IgniteAI</button>
+          <!-- Tombol dengan animasi fade-up -->
+          <button class="cosmic-button" data-aos="fade-up" data-aos-delay="200">
+            Invest in IgniteAI
+          </button>
         </div>
       </div>
     </div>
@@ -35,6 +39,9 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import Chart from 'chart.js/auto'
+
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const chartCanvas = ref(null)
 let chartInstance = null
@@ -103,6 +110,11 @@ const chartOptions = {
       },
     },
   },
+  // Animasi chart
+  animation: {
+    duration: 2000, // Durasi animasi (2 detik)
+    easing: 'easeInOutQuart', // Efek easing
+  },
 }
 
 onMounted(() => {
@@ -119,6 +131,11 @@ onMounted(() => {
     type: 'line',
     data: chartData,
     options: chartOptions,
+  })
+
+  AOS.init({
+    duration: 800, // Durasi animasi
+    once: true, // Animasi hanya terjadi sekali
   })
 })
 
@@ -167,5 +184,10 @@ canvas:hover {
   @apply bg-transparent border-2 border-white text-white px-8 py-3 rounded-full
          text-lg font-bold hover:bg-white hover:text-black transition-all
          duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)];
+}
+
+.bg-white\/10:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
 }
 </style>

@@ -3,6 +3,7 @@
     <div class="container mx-auto px-6">
       <h2
         class="text-4xl sm:text-6xl md:text-8xl font-bold mb-12 md:mb-16 text-white text-center"
+        data-aos="fade-up"
       >
         Why the World Needs IgniteAI
       </h2>
@@ -11,7 +12,10 @@
         class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 mb-12 md:mb-16"
       >
         <!-- Problem Section -->
-        <div class="w-full md:w-1/2 text-center md:text-left">
+        <div
+          class="w-full md:w-1/2 text-center md:text-left"
+          data-aos="fade-right"
+        >
           <h3
             class="text-3xl sm:text-5xl md:text-6xl font-bold mb-4 md:mb-6 text-white"
           >
@@ -26,12 +30,18 @@
         </div>
 
         <!-- Separator (Hanya muncul di Desktop) -->
-        <div class="hidden md:block text-white text-6xl md:text-8xl font-bold">
+        <div
+          class="hidden md:block text-white text-6xl md:text-8xl font-bold"
+          data-aos="fade-up"
+        >
           /
         </div>
 
         <!-- Solution Section -->
-        <div class="w-full md:w-1/2 text-center md:text-right">
+        <div
+          class="w-full md:w-1/2 text-center md:text-right"
+          data-aos="fade-left"
+        >
           <h3
             class="text-3xl sm:text-5xl md:text-6xl font-bold mb-4 md:mb-6 text-white"
           >
@@ -49,17 +59,37 @@
 
       <!-- Quote dan Button -->
       <div class="text-center">
-        <p class="text-xl sm:text-2xl md:text-3xl font-bold text-white italic">
+        <p
+          class="text-xl sm:text-2xl md:text-3xl font-bold text-white italic"
+          data-aos="fade-up"
+        >
           "Stop juggling tools. Let IgniteAI do the heavy lifting for you."
         </p>
 
-        <button class="cosmic-button cosmic-button-white mt-8 md:mt-12">
+        <button
+          class="cosmic-button cosmic-button-white mt-8 md:mt-12"
+          data-aos="fade-up"
+        >
           Discover How We Help
         </button>
       </div>
     </div>
   </section>
 </template>
+
+<script>
+import AOS from 'aos'
+import 'aos/dist/aos.css' // Import stylesheet AOS
+
+export default {
+  mounted() {
+    AOS.init({
+      duration: 800, // Durasi animasi
+      once: true, // Animasi hanya terjadi sekali
+    })
+  },
+}
+</script>
 
 <style scoped>
 .problem-solution {
