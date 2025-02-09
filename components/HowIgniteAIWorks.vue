@@ -22,9 +22,12 @@
         <!-- Section 1 Content -->
         <div class="mb-8 md:mb-12 opacity-0 translate-y-10" ref="section1">
           <div class="space-y-4 md:space-y-6 max-w-3xl mx-auto">
-            <button class="cosmic-button w-full md:w-auto">
+            <a
+              href="https://github.com/IgniteAI-eth"
+              class="cosmic-button w-full md:w-auto"
+            >
               Learn More About the Tech
-            </button>
+            </a>
             <p class="text-base md:text-xl text-gray-300 leading-relaxed">
               IgniteAI combines advanced machine learning, intuitive design, and
               secure architecture to deliver AI Agents that anyone can use.

@@ -39,9 +39,9 @@
           <button class="cosmic-button cosmic-button-black">
             Get Started Now
           </button>
-          <button class="cosmic-button cosmic-button-white">
+          <!-- <button class="cosmic-button cosmic-button-white">
             Explore the technology behind IgniteAI
-          </button>
+          </button> -->
         </div>
         <h2 class="subtitle subtitle-lg mt-6">
           Smarter AI. Better Decisions. Infinite possibilities.

@@ -23,9 +23,12 @@
         the future together.
       </p>
       <div class="space-x-4" data-aos="fade-up" data-aos-delay="400">
-        <button class="cosmic-button cosmic-button-black">
+        <a
+          href="https://t.me/igniteai"
+          class="cosmic-button cosmic-button-black"
+        >
           Start Your Journey with IgniteAI
-        </button>
+        </a>
         <button class="cosmic-button cosmic-button-white">
           Explore the technology behind IgniteAI
         </button>
