@@ -1,5 +1,5 @@
 <template>
-  <section class="how-it-works relative min-h-screen">
+  <section class="how-it-works relative min-h-screen z-10">
     <!-- Shared Circle Background (parallax) -->
     <div class="absolute inset-0 flex items-center justify-center z-0">
       <div
@@ -181,6 +181,10 @@ onMounted(() => {
 }
 /* Responsive Design */
 @media (max-width: 768px) {
+  .how-it-works {
+    @apply mt-8;
+  }
+
   .cosmic-circle {
     width: 280vw; /* Increased for better fit on smaller screens */
     height: 280vw; /* Increased for better fit on smaller screens */

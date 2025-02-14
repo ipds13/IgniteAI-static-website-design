@@ -22,16 +22,21 @@
         the possibilities are endless. Be part of this movement, and let’s build
         the future together.
       </p>
-      <div class="space-x-4" data-aos="fade-up" data-aos-delay="400">
+      <!-- Tambahkan md:justify-center untuk center alignment pada desktop -->
+      <div
+        class="flex flex-col md:flex-row md:justify-center space-y-4 md:space-y-0 md:space-x-4"
+        data-aos="fade-up"
+        data-aos-delay="400"
+      >
         <a
           href="https://t.me/igniteai"
           class="cosmic-button cosmic-button-black"
         >
           Start Your Journey with IgniteAI
         </a>
-        <button class="cosmic-button cosmic-button-white">
+        <a href="#" class="cosmic-button cosmic-button-white">
           Explore the technology behind IgniteAI
-        </button>
+        </a>
       </div>
     </div>
   </section>
