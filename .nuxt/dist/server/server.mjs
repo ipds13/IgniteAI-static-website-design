@@ -1,0 +1,1 @@
+export { default } from "file:///Users/iputudickysundara/project/crypto/IgniteAI-static-website-design/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
